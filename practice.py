@@ -11,7 +11,7 @@ def get_sleep(get_time):
 
 
 directory = os.path.dirname(os.path.abspath(__file__))+"\sounds\\"
-# print(directory)
+print("Initializing...")
 
 hiragana_dict = {}
 
@@ -27,14 +27,28 @@ for file in os.listdir(directory):
 hiragana_dict_copy = hiragana_dict
 point = 0
 while True:
+	print("Listen...")
 	random_hiragana = random.choice(list(hiragana_dict_copy.items()))
-	sound_play(random_hiragana[1])
-	answer = input("Give your answer:  ")
-	if answer is random_hiragana[0]:
+	random_hiragana_ch = random_hiragana[0]
+	random_hiragana_path = random_hiragana[1]
+	sound_play(random_hiragana_path)
+	answer = input("Give your answer:  ")	
+	if answer == random_hiragana_ch:
 		point = point + 1
-		print("Your point in this session "+ point)
+		print("Right, Your point "+ str(point))
+		del hiragana_dict_copy[random_hiragana_ch]
 	else:
+		print("Wrong, Correct answer is \""+random_hiragana_ch+"\"\nYour point "+ str(point))
+
+	selection = int(input("1. Next Character \n2. Reset \n3. Exit\n"))
+	if selection == 1:
 		continue
+	elif selection == 2:
+		print("Resetting Character Set...")
+		hiragana_dict_copy = hiragana_dict
+	else:
+		print("Your total point in this session "+ str(point)+"\nSee you soon...")
+		break
 
 
 
