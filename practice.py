@@ -27,6 +27,9 @@ for file in os.listdir(directory):
 hiragana_dict_copy = hiragana_dict
 point = 0
 while True:
+	if not hiragana_dict_copy:
+		print("Congratulations! You have mastered all Hiragana Characters. Ending Session")
+		break
 	print("Listen...")
 	random_hiragana = random.choice(list(hiragana_dict_copy.items()))
 	random_hiragana_ch = random_hiragana[0]
