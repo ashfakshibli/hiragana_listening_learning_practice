@@ -9,6 +9,19 @@ def sound_play(path):
 def get_sleep(get_time):
 	time.sleep(get_time)
 
+def get_selection():
+	input_digit = ''
+	while input_digit is not int:
+		try:
+			input_digit = int(input("1. Next Character \n2. Reset \n3. Exit\n"))
+			break
+		except:
+			print("Invalid Input. Select Again.")
+	return input_digit
+		
+	
+
+
 
 directory = os.path.dirname(os.path.abspath(__file__))+"\sounds\\"
 print("Initializing...")
@@ -43,7 +56,8 @@ while True:
 	else:
 		print("Wrong, Correct answer is \""+random_hiragana_ch+"\"\nYour point "+ str(point))
 
-	selection = int(input("1. Next Character \n2. Reset \n3. Exit\n"))
+	selection = get_selection()
+
 	if selection == 1:
 		continue
 	elif selection == 2:
