@@ -61,8 +61,9 @@ while True:
 	if selection == 1:
 		continue
 	elif selection == 2:
-		print("Resetting Character Set...")
+		print("Resetting...")
 		hiragana_dict_copy = hiragana_dict
+		point = 0
 	else:
 		print("Your total point in this session "+ str(point)+"\nSee you soon...")
 		break
