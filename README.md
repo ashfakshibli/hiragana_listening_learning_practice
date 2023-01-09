@@ -15,4 +15,4 @@ Using this code snippets in python you can practice hiragana chacters listening.
 
 
 > FootNote
-#This project was done in early 2018 when I was in a Japanese language and tech skill up program. I was set to move to Japanese company after the program. But I decided to join Samsung in Bangladesh and going Japan is was postponed. 
+#This project was done in early 2018 when I was in a Japanese language and tech skill up program.
